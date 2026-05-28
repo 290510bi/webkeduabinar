@@ -5,7 +5,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    if(username === "heri" && password === "123") {
+    if(username === "heri" && password === "heri123") {
 
         localStorage.setItem("username", username);
 
