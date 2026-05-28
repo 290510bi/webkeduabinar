@@ -1,4 +1,5 @@
 document.getElementById("loginForm").addEventListener("submit", function(e) {
+
     e.preventDefault();
 
     let username = document.getElementById("username").value;
@@ -17,4 +18,5 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
         alert("Username atau password salah!");
 
     }
+
 });
