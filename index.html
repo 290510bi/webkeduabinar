@@ -75,10 +75,16 @@
     
                             <li class="nav-item">
                                 <a class="nav-link click-scroll" href="#section_6">Kontak</a>
-                            <p id= "userInfo">Belum Login</p>
-                            <div i="authArea">
-                                <button onclick="goLogin()" class="nav-cta">Login</button>
-                            </div>
+                            </li>
+                            
+                            <li class="nav-item ms-3">
+                                <p id="userInfo" class="text-white mb-2">Belum Login</p>
+                            
+                                <div id="authArea">
+                                    <button onclick="goLogin()" class="btn custom-btn">
+                                        Login
+                                    </button>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -449,6 +455,34 @@
         <script src="js/jquery.sticky.js"></script>
         <script src="js/click-scroll.js"></script>
         <script src="js/custom.js"></script>
+
+                <script>
+        function goLogin() {
+            window.location.href = "login/index.html";
+        }
+        function logout() {
+            localStorage.removeItem("username");
+            document.getElementById("userInfo").innerHTML = "Belum Login";
+            document.getElementById("authArea").innerHTML =
+            `<button onclick="goLogin()" class="btn custom-btn">
+                Login
+            </button>`;
+        }
+        
+        window.onload = function () {
+            let user = localStorage.getItem("username");
+        
+            if (user) {
+                document.getElementById("userInfo").innerHTML =
+                    "Login sebagai: " + user;
+        
+                document.getElementById("authArea").innerHTML =
+                `<button onclick="logout()" class="btn custom-btn">
+                    Logout
+                </button>`;
+            }
+        }
+        </script>
 
     </body>
 </html>
